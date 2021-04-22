@@ -3,6 +3,12 @@
 ## Objective
 Implement a bookstore REST API using C# and .Net Core.
 
+## Tasks
+* A basic book model with title, description, author, cover image and price.
+* A REST endpoint for the /books resource with CRUD operations (returns JSON)
+* In-memory book repository and have two default items (books)
+* REST endpoints are below
+
 ## Endpoints
   | Method  | End Point | Parameters |
 | ------------- | ------------- | -------------|
