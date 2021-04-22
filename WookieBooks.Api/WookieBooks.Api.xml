@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WookieBooks.Api</name>
+    </assembly>
+    <members>
+        <member name="M:WookieBooks.Api.Controllers.BooksController.GetAllBooks">
+            <summary>
+            Get all the books
+            </summary>
+            <returns>List of the books stored in the DB</returns>
+        </member>
+        <member name="M:WookieBooks.Api.Controllers.BooksController.GetBook(System.Int64)">
+            <summary>
+            Gets the book by given id 
+            </summary>
+            <param name="id">Id to look for in the DB</param>
+            <returns>Book Object, if found</returns>
+        </member>
+        <member name="M:WookieBooks.Api.Controllers.BooksController.SaveBook(WookieBooks.Api.Models.Book)">
+            <summary>
+            Save a new Book Object in the DB
+            </summary>
+            <param name="book">Book Object with Id and Title Required</param>
+            <returns>Id of newly created Book</returns>
+        </member>
+        <member name="M:WookieBooks.Api.Controllers.BooksController.UpdateBook(WookieBooks.Api.Models.Book)">
+            <summary>
+            Update the details of the book
+            </summary>
+            <param name="book">Object with new Details and Id for which details needs to be updated</param>
+            <returns>Updated book object</returns>
+        </member>
+        <member name="M:WookieBooks.Api.Controllers.BooksController.DeleteBook(System.Int64)">
+            <summary>
+            Deletes the book from the DB
+            </summary>
+            <param name="id">Id fo the book that needs to be deleted</param>
+            <returns>Succes: true or false</returns>
+        </member>
+    </members>
+</doc>
