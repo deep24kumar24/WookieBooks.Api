@@ -1,0 +1,175 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Wookie Books Api",
+    "description": "Wookie Books Api Documentation",
+    "version": "v1",
+    "contact": {
+    }
+  },
+  "paths": {
+    "/Books/getAllBooks": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Get all the books",
+        "description": "Get all the books",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Books/getBook": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Gets the book by given id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id to look for in the DB",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Books/saveBook": {
+      "put": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Save a new Book Object in the DB",
+        "requestBody": {
+          "description": "Book Object with Id and Title Required",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Books/updateBook": {
+      "patch": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Update the details of the book",
+        "requestBody": {
+          "description": "Object with new Details and Id for which details needs to be updated",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Book"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/Books/deleteBook": {
+      "delete": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Deletes the book from the DB",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "Id fo the book that needs to be deleted",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Book": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "nullable": true
+          },
+          "coverImage": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
